@@ -1,0 +1,46 @@
+$background: #002D42;
+$nav: #137991;
+$primary: #6DD2DA;
+$secondary: #15A3A6;
+$tertiary: #92CC6F;
+
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  nav {
+    background: $background;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    //fixed top
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    left: 0;
+    right: 0;
+    font-size: 18px;
+    box-shadow: 0 10px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19) !important;
+    div{
+      margin-right: 20px;
+      a{
+        color: white;
+        text-decoration: none;
+        font-size: 16px;
+        margin-right: 10px;
+      }
+    }
+  }
+
+  main {
+    display: flex;
+    flew-grow: 1;
+    margin-top: 50px;
+    color: white;
+
+  }
+
+}

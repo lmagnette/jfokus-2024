@@ -1,0 +1,26 @@
+<div class="card">
+  <img [ngSrc]="dino.image" [height]="300" [width]="300">
+  <div class="footer">
+    <p class="name">
+      <a [routerLink]="''+dino.id">
+        {{ dino.name }}
+      </a>
+    </p>
+    <p>
+      <ng-container *ngIf="dino.diet === 'Carnivore'; else herbi">
+        🥩
+      </ng-container>
+      <ng-template #herbi>
+        <ng-container *ngIf="dino.diet==='Herbivore'; else default">
+          🍃
+        </ng-container>
+      </ng-template>
+      <ng-template #default>
+        🍖
+      </ng-template>
+    </p>
+  </div>
+</div>
+<button class="like" (click)="like()">
+  <mat-icon aria-hidden="false" aria-label="like" fontIcon="favorite" matBadge="0"></mat-icon>
+</button>

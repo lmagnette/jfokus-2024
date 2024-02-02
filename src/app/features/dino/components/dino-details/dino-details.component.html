@@ -1,0 +1,51 @@
+<ng-container *ngIf="dino">
+  <h1>
+    {{ dino.name }}
+  </h1>
+  <div class="body">
+    <div class="card">
+      <img [ngSrc]="dino.image" [height]="300" [width]="300">
+
+      <div class="properties">
+        <h2>Informations</h2>
+        <p>Height : {{ dino.height }} m</p>
+        <p>Weight : {{ dino.weight }} kg</p>
+        <p>Diet : {{ dino.diet }}</p>
+        <p>Period : {{ dino.period }}</p>
+      </div>
+    </div>
+    <div class="card description">
+      <h2>Description</h2>
+      <p>
+        {{ dino.description }}
+      </p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis, delectus doloribus ea eligendi ipsa modi
+        optio possimus quam quas sit. Beatae deserunt dicta maiores soluta tenetur. Adipisci consectetur ea soluta!
+      </p>
+      <p>Ab aspernatur cupiditate enim esse ex maiores neque quas qui vitae voluptatem. Ad at commodi debitis enim
+        eum
+        facilis, fugiat harum hic nobis non repellendus sequi tempora ullam voluptate voluptates?
+      </p>
+      <p>Alias aut expedita quibusdam. Corporis distinctio eveniet, fugiat ipsum labore libero molestiae nesciunt
+        non
+        officiis ut! Aliquid aut autem doloribus enim eos in, libero nisi, quo sint tempore unde velit!
+      </p>
+      <p>Atque fugiat illum minima perferendis possimus sed similique suscipit voluptas voluptates, voluptatum!
+        Architecto commodi est inventore molestiae nihil officia officiis pariatur, reiciendis saepe sapiente. A
+        aliquam
+        fugit natus odit voluptas?
+      </p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, repellendus, rerum! Dolorum id nostrum
+        reiciendis voluptates? Consequuntur eum ipsa laboriosam modi necessitatibus neque perferendis quae quisquam
+        sequi tenetur ullam, unde?
+      </p>
+      <p>Consequatur consequuntur, esse eveniet explicabo quo sapiente velit! Dicta excepturi, in minus quibusdam
+        reprehenderit rerum veritatis! Asperiores debitis deserunt facere maiores nam perferendis provident quisquam,
+        quo ratione veniam! Laudantium, neque!
+      </p>
+      <p>Cupiditate dolor eius esse eum hic iste labore modi pariatur, placeat, qui sed, sit suscipit voluptatibus.
+        Eligendi itaque magnam nesciunt nisi nobis odio omnis quia, repellendus voluptate voluptates? Dolor, sit.
+      </p>
+    </div>
+  </div>
+</ng-container>

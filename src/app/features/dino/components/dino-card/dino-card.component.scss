@@ -1,0 +1,46 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
+  padding-top: 10px;
+  background: #002D42;
+  border-radius: 5px;
+  margin: 10px;
+  box-shadow: 0 10px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
+
+  .footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    padding-left: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-right: 5px;
+
+    p {
+      margin-bottom: 0;
+    }
+
+    .name {
+      flex-grow: 1;
+      margin-bottom: 0;
+
+      a {
+        color: white;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.like {
+  position: relative;
+  top: -338px;
+  right: -265px;
+  background: none;
+  border: none;
+  color: #92CC6F;
+}
