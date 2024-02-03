@@ -7,14 +7,19 @@
   width: 100%;
 
   h1{
+    margin: 20px 10px;
     display: flex;
     width: 100%;
     justify-content: center;
+    background: #002D42;
+    border-radius: 5px;
+    padding: 10px;
   }
   .body {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
+
     .card {
       display: flex;
       flex-direction: column;

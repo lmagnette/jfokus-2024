@@ -7,14 +7,17 @@ export const routes: Routes = [
   {
     path: 'dinos',
     component: DinoListComponent,
+    title: 'Dinosaur list'
   },
   {
     path: 'analytics',
     component: AnalyticsComponent,
+    title: 'Analytics'
   },
   {
     path: 'dinos/:id',
     component: DinoDetailsComponent,
+    title: 'Dinosaur details'
   },
   {
     path: '',
