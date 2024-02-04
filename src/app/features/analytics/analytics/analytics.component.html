@@ -3,5 +3,13 @@
   <p>Scroll down 👇</p>
 </div>
 <div class="heavy">
+  @defer(on timer(3s)){
     <app-heavy-component/>
+  } @placeholder (minimum 2s){
+    <app-placeholder-component/>
+  } @loading (minimum 5s){
+    <app-loading-component/>
+  } @error {
+    <p>An error occurred</p>
+  }
 </div>
