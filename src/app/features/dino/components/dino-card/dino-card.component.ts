@@ -22,7 +22,7 @@ export class DinoCardComponent {
 
 
 
-  @Input()
+  @Input({required:true})
   dino!:Dino;
 
   like() {
