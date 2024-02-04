@@ -1,4 +1,4 @@
-import { Component, DestroyRef, inject, Input, numberAttribute, OnChanges, OnInit } from '@angular/core';
+import { Component, DestroyRef, effect, inject, input, Input, numberAttribute, OnChanges, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { map } from 'rxjs';
 import { DinoService } from '../../dino.service';
@@ -22,24 +22,23 @@ export const routeNumberParam$ = (key:string) => {
   templateUrl: './dino-details.component.html',
   styleUrl: './dino-details.component.scss'
 })
-export default class DinoDetailsComponent implements OnChanges{
+export default class DinoDetailsComponent{
 
-  @Input({required:true, transform:numberAttribute})
-  id!:number;
+  id=input.required<number,string>({transform:numberAttribute});
   dino!:Dino;
 
 
   constructor(private dinoService: DinoService, private destroyRef:DestroyRef) {
-
+    effect(() => {
+      const id = this.id();
+      if(id) {
+        this.dinoService.getDino( id )
+          .pipe(takeUntilDestroyed(this.destroyRef))
+          .subscribe( dino => {
+            this.dino = dino;
+          } );
+      }
+    })
   }
 
-  ngOnChanges() {
-    if(this.id) {
-      this.dinoService.getDino( this.id )
-        .pipe(takeUntilDestroyed(this.destroyRef))
-        .subscribe( dino => {
-        this.dino = dino;
-      } );
-    }
-  }
 }

@@ -1,4 +1,4 @@
-import { Component, effect, Input, signal } from '@angular/core';
+import { Component, effect, input, Input, signal } from '@angular/core';
 import { NgIf, NgOptimizedImage } from '@angular/common';
 import { Dino } from '../../model/dino';
 import { RouterLink } from '@angular/router';
@@ -21,8 +21,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class DinoCardComponent {
 
-  @Input({required:true})
-  dino!:Dino;
+  dino = input.required<Dino>();
 
   likeCounter = signal<number>(0);
 
@@ -30,7 +29,7 @@ export class DinoCardComponent {
     effect(() => {
       const count = this.likeCounter();
       if(count>0){
-        this.snackBar.open(`${this.dino.name} has been like ${count} times`,'',{duration:5000});
+        this.snackBar.open(`${this.dino().name} has been like ${count} times`,'',{duration:5000});
       }
     });
   }
