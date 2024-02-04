@@ -1,9 +1,10 @@
-import { Component, inject, Input, numberAttribute, OnChanges, OnInit } from '@angular/core';
+import { Component, DestroyRef, inject, Input, numberAttribute, OnChanges, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { map } from 'rxjs';
 import { DinoService } from '../../dino.service';
 import { Dino } from '../../model/dino';
 import { NgIf, NgOptimizedImage } from '@angular/common';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 export const routeNumberParam$ = (key:string) => {
   return inject(ActivatedRoute).paramMap.pipe(
@@ -28,13 +29,15 @@ export default class DinoDetailsComponent implements OnChanges{
   dino!:Dino;
 
 
-  constructor(private dinoService: DinoService) {
+  constructor(private dinoService: DinoService, private destroyRef:DestroyRef) {
 
   }
 
   ngOnChanges() {
     if(this.id) {
-      this.dinoService.getDino( this.id ).subscribe( dino => {
+      this.dinoService.getDino( this.id )
+        .pipe(takeUntilDestroyed(this.destroyRef))
+        .subscribe( dino => {
         this.dino = dino;
       } );
     }
