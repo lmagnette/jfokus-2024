@@ -1,4 +1,4 @@
-import { Component, effect, input, Input, signal } from '@angular/core';
+import { Component, effect, input, signal } from '@angular/core';
 import { NgIf, NgOptimizedImage } from '@angular/common';
 import { Dino } from '../../model/dino';
 import { RouterLink } from '@angular/router';
