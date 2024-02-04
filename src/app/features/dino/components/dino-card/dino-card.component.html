@@ -7,17 +7,25 @@
       </a>
     </p>
     <p>
-      <ng-container *ngIf="dino().diet === 'Carnivore'; else herbi">
+
+      @if(dino().diet === 'Carnivore'){
         🥩
-      </ng-container>
-      <ng-template #herbi>
-        <ng-container *ngIf="dino().diet==='Herbivore'; else default">
-          🍃
-        </ng-container>
-      </ng-template>
-      <ng-template #default>
+      } @else if (dino().diet ==='Herbivore'){
+        🍃
+      } @else {
         🍖
-      </ng-template>
+      }
+      @switch (dino().diet){
+        @case ('Carnivore'){
+          🥩
+        }
+        @case ('Herbivore'){
+          🍃
+        }
+        @default {
+          🍖
+        }
+      }
     </p>
   </div>
 </div>
