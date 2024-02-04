@@ -16,6 +16,6 @@ import { PlaceholderComponentComponent } from '../placeholder-component/placehol
   templateUrl: './analytics.component.html',
   styleUrl: './analytics.component.scss'
 })
-export class AnalyticsComponent {
+export default class AnalyticsComponent {
 
 }
