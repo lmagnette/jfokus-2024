@@ -5,11 +5,13 @@
       id="search"
       type="text"
       placeholder="Velociraptor"
+      [ngModel]="searchTerm()"
+      (ngModelChange)="searchTermChanged($event)"
     />
   </div>
 </div>
 <div class="dinos">
-  <ng-container *ngFor="let dino of dinos$ | async">
+  <ng-container *ngFor="let dino of filteredDinos()">
     <app-dino-card [dino]="dino"/>
   </ng-container>
 </div>

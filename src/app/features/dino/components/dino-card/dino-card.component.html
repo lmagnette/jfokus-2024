@@ -22,5 +22,5 @@
   </div>
 </div>
 <button class="like" (click)="like()">
-  <mat-icon aria-hidden="false" aria-label="like" fontIcon="favorite" matBadge="0"></mat-icon>
+  <mat-icon aria-hidden="false" aria-label="like" fontIcon="favorite" [matBadge]="likeCounter()"></mat-icon>
 </button>

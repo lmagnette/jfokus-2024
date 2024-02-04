@@ -1,9 +1,10 @@
-import { Component, Input } from '@angular/core';
+import { Component, effect, Input, signal } from '@angular/core';
 import { NgIf, NgOptimizedImage } from '@angular/common';
 import { Dino } from '../../model/dino';
 import { RouterLink } from '@angular/router';
 import { MatIcon } from '@angular/material/icon';
 import { MatBadge } from '@angular/material/badge';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-dino-card',
@@ -20,12 +21,21 @@ import { MatBadge } from '@angular/material/badge';
 })
 export class DinoCardComponent {
 
-
-
   @Input({required:true})
   dino!:Dino;
 
-  like() {
+  likeCounter = signal<number>(0);
 
+  constructor(private snackBar:MatSnackBar){
+    effect(() => {
+      const count = this.likeCounter();
+      if(count>0){
+        this.snackBar.open(`${this.dino.name} has been like ${count} times`,'',{duration:5000});
+      }
+    });
+  }
+
+  like() {
+    this.likeCounter.update( value => value+1);
   }
 }
