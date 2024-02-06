@@ -2,6 +2,8 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.2.0.
 
+Here's the link to the slides: https://speakerdeck.com/magnette/jfokus-2024-unleashing-the-power-of-angular-navigating-the-latest-releases-and-transformations
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
